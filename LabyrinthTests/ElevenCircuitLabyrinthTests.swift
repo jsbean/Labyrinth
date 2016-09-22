@@ -14,6 +14,7 @@ class ElevenCircuitLabyrinthTests: XCTestCase {
     let labyrinth = Labyrinth(amountCircuits: 11)
     var path: Path!
     
+    // TODO: Refactor this into the framework, encapsulated beneath some structure's interface
     let secondHalf: (UInt) -> ([(UInt, UInt)]) -> [(UInt, UInt)] = { max in
         return { firstHalf in
             return Array(
@@ -59,7 +60,6 @@ class ElevenCircuitLabyrinthTests: XCTestCase {
         }
         
         self.path = Path(segments)
-        print(path)
     }
 
     func testCircuits() {
