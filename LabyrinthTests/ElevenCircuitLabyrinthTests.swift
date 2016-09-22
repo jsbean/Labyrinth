@@ -16,12 +16,11 @@ class ElevenCircuitLabyrinthTests: XCTestCase {
     
     let secondHalf: (UInt) -> ([(UInt, UInt)]) -> [(UInt, UInt)] = { max in
         return { firstHalf in
-            let firstHalf = firstHalf.reversed()
             return Array(
                 zip(
-                    firstHalf.map { max - $0.0 },
-                    firstHalf.map { $0.1 }
-                )
+                    firstHalf.map { max - $0.0 },   // index of segment's circuit
+                    firstHalf.map { $0.1 }          // length of segment in quarters
+                ).reversed()
             )
         }
     }
@@ -34,13 +33,23 @@ class ElevenCircuitLabyrinthTests: XCTestCase {
 
         // 11-circuit Chartres labyrinth
         let intro: [(UInt, UInt)] = [(middle - 1, 1), (middle, 1)]
+        
+        // TODO: Generalize `7` into relation to middle
         let segmentA: [(UInt, UInt)] = Array(zip((7...max).reversed(), [2,2,1,1]))
+        
+        // TODO: Generalize `6` into relation to middle
         let segmentB: [(UInt, UInt)] = Array(zip((6...(max - 1)), [2,1,2,1]))
+        
+        // TODO: Generalize `6` into relation to middle
         let segmentC: [(UInt, UInt)] = Array(zip((6...max).reversed(), [2,1,1,2,1]))
+        
+        // FIXME: Ensure odd- and even-dimensioned structures work appropriately
         let center: [(UInt, UInt)] = [((max / 2), 2)]
         
+        // First half
         let beginning: [[(UInt, UInt)]] = [intro, segmentA, segmentB, segmentC]
 
+        // Second half
         let ending = beginning.reversed().map(secondHalf(max))
         
         let segments = (beginning + [center] + ending)
