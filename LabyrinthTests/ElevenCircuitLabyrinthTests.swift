@@ -12,7 +12,7 @@ import XCTest
 class ElevenCircuitLabyrinthTests: XCTestCase {
 
     let labyrinth = Labyrinth(amountCircuits: 11)
-    var path: Path!
+    var path: Labyrinth.Path!
     
     // TODO: Refactor this into the framework, encapsulated beneath some structure's interface
     let secondHalf: (UInt) -> ([(UInt, UInt)]) -> [(UInt, UInt)] = { max in
@@ -51,10 +51,10 @@ class ElevenCircuitLabyrinthTests: XCTestCase {
         let segments = (beginning + [center] + ending)
             .flatMap { $0 }
             .map { (i, quarters) in
-              Segment(circuit: labyrinth.circuits[Int(i)], quarters: quarters)
+              Labyrinth.Segment(circuit: labyrinth.circuits[Int(i)], quarters: quarters)
         }
         
-        self.path = Path(segments)
+        self.path = Labyrinth.Path(segments)
     }
 
     func testCircuits() {

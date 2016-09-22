@@ -9,14 +9,8 @@
 /* Begin PBXBuildFile section */
 		0771194B1D834F6B0069FA85 /* Labyrinth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771194A1D834F6B0069FA85 /* Labyrinth.swift */; };
 		0771194C1D834F6B0069FA85 /* Labyrinth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771194A1D834F6B0069FA85 /* Labyrinth.swift */; };
-		0771194E1D834F850069FA85 /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771194D1D834F850069FA85 /* Circuit.swift */; };
-		0771194F1D834F850069FA85 /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771194D1D834F850069FA85 /* Circuit.swift */; };
-		077119511D834F970069FA85 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077119501D834F970069FA85 /* Segment.swift */; };
-		077119521D834F970069FA85 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077119501D834F970069FA85 /* Segment.swift */; };
 		0771195C1D8351EA0069FA85 /* ElevenCircuitLabyrinthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077119591D8351DC0069FA85 /* ElevenCircuitLabyrinthTests.swift */; };
 		0771195D1D8351EB0069FA85 /* ElevenCircuitLabyrinthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077119591D8351DC0069FA85 /* ElevenCircuitLabyrinthTests.swift */; };
-		0771195F1D8352DA0069FA85 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771195E1D8352DA0069FA85 /* Path.swift */; };
-		077119601D8352DA0069FA85 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771195E1D8352DA0069FA85 /* Path.swift */; };
 		53A8336F4BB937385CDE65EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361B140E3A50E7F2CA663836 /* Foundation.framework */; };
 		58EE591EE2B7136EE1FF2298 /* Labyrinth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A3880FAC223778F9CC58F7C4 /* Labyrinth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7A2D685B51351FFE20646240 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331D8ABA7C9E9CEEF6F01E02 /* Cocoa.framework */; };
@@ -69,10 +63,7 @@
 
 /* Begin PBXFileReference section */
 		0771194A1D834F6B0069FA85 /* Labyrinth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Labyrinth.swift; path = Labyrinth/Labyrinth.swift; sourceTree = "<group>"; };
-		0771194D1D834F850069FA85 /* Circuit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Circuit.swift; path = Labyrinth/Circuit.swift; sourceTree = "<group>"; };
-		077119501D834F970069FA85 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Segment.swift; path = Labyrinth/Segment.swift; sourceTree = "<group>"; };
 		077119591D8351DC0069FA85 /* ElevenCircuitLabyrinthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElevenCircuitLabyrinthTests.swift; path = LabyrinthTests/ElevenCircuitLabyrinthTests.swift; sourceTree = "<group>"; };
-		0771195E1D8352DA0069FA85 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Path.swift; path = Labyrinth/Path.swift; sourceTree = "<group>"; };
 		1939F5F2EB21D4B7ED16A2C0 /* Labyrinth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Labyrinth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		331D8ABA7C9E9CEEF6F01E02 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		361B140E3A50E7F2CA663836 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -166,9 +157,6 @@
 			children = (
 				33977D3D607264DCC08E92D4 /* Supporting Files */,
 				0771194A1D834F6B0069FA85 /* Labyrinth.swift */,
-				0771194D1D834F850069FA85 /* Circuit.swift */,
-				077119501D834F970069FA85 /* Segment.swift */,
-				0771195E1D8352DA0069FA85 /* Path.swift */,
 			);
 			name = Labyrinth;
 			sourceTree = "<group>";
@@ -347,9 +335,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0771194C1D834F6B0069FA85 /* Labyrinth.swift in Sources */,
-				077119521D834F970069FA85 /* Segment.swift in Sources */,
-				077119601D8352DA0069FA85 /* Path.swift in Sources */,
-				0771194F1D834F850069FA85 /* Circuit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,9 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0771194B1D834F6B0069FA85 /* Labyrinth.swift in Sources */,
-				077119511D834F970069FA85 /* Segment.swift in Sources */,
-				0771195F1D8352DA0069FA85 /* Path.swift in Sources */,
-				0771194E1D834F850069FA85 /* Circuit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
