@@ -17,12 +17,7 @@ class ElevenCircuitLabyrinthTests: XCTestCase {
     // TODO: Refactor this into the framework, encapsulated beneath some structure's interface
     let secondHalf: (UInt) -> ([(UInt, UInt)]) -> [(UInt, UInt)] = { max in
         return { firstHalf in
-            return Array(
-                zip(
-                    firstHalf.map { max - $0.0 },   // index of segment's circuit
-                    firstHalf.map { $0.1 }          // length of segment in quarters
-                ).reversed()
-            )
+            return Array(zip(firstHalf.map { max - $0.0 }, firstHalf.map { $0.1 }).reversed())
         }
     }
     
