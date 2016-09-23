@@ -46,7 +46,52 @@ public struct Labyrinth {
             segments.append(contentsOf: path.segments)
         }
     }
-
+    
+    public var path: Path {
+        
+        let count = circuits.count
+        let max = UInt(circuits.count - 1)
+        let middle = UInt(count / 2)
+        
+        func retrograde(sequence: [(UInt, UInt)]) -> [(UInt, UInt)] {
+            return Array(
+                zip(
+                    sequence.map { max - $0.0 },
+                    sequence.map { $0.1 }
+                ).reversed()
+            )
+        }
+        
+        // Ensure this is generalizable beyond 11-circuit Chartres labyrinth
+        let intro: [(UInt, UInt)] = [(middle - 1, 1), (middle, 1)]
+        
+        // TODO: Generalize `7` into relation to middle for arbirtrary-dimensions
+        let segmentA: [(UInt, UInt)] = Array(zip((7...max).reversed(), [2,2,1,1]))
+        
+        // TODO: Generalize `6` into relation to middle for arbirtrary-dimensions
+        let segmentB: [(UInt, UInt)] = Array(zip((6...(max - 1)), [2,1,2,1]))
+        
+        // TODO: Generalize `6` into relation to middle for arbirtrary-dimensions
+        let segmentC: [(UInt, UInt)] = Array(zip((6...max).reversed(), [2,1,1,2,1]))
+        
+        // FIXME: Ensure odd- and even-dimensioned structures work appropriately
+        let center: [(UInt, UInt)] = [((max / 2), 2)]
+        
+        // First half
+        let beginning: [[(UInt, UInt)]] = [intro, segmentA, segmentB, segmentC]
+        
+        // Second half
+        let ending = beginning.reversed().map(retrograde)
+        
+        return Path(
+            (beginning + [center] + ending)
+                .flatMap { $0 }
+                .map { (i, quarters) in
+                    Labyrinth.Segment(circuit: circuits[Int(i)], quarters: quarters)
+                }
+        )
+    }
+    
     public let circuits: [Circuit]
     
     public init(amountCircuits: UInt, centerProportion: Float = 0.25) {
